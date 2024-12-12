@@ -2,8 +2,8 @@ import argparse
 from PasswordValidator.Models.PasswordStrengthEnum import *
 from PasswordValidator.PasswordValidatorService import *
 
-parser = argparse.ArgumentParser(description="Generate a secure password.")
-parser.add_argument('--password', help="Length of the password.")
+parser = argparse.ArgumentParser(description="validate password strength")
+parser.add_argument('--password', help="password")
 args = parser.parse_args()
 password_strength = PasswordValidatorService().GetPasswordStrength(args.password)
 if password_strength == PasswordStrengthEnum.STRONG:
